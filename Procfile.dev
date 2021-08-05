@@ -1,0 +1,2 @@
+jekyll: bundle exec rake serve
+rollup: yarn run rollup -w -c

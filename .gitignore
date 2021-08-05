@@ -11,4 +11,4 @@ vendor
 
 node_modules
 yarn-error.log
-
+src/assets/javascripts/*

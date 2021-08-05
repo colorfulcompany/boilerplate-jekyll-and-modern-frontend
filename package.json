@@ -12,6 +12,6 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint frontend"
   }
 }

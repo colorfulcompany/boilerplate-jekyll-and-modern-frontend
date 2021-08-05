@@ -5,5 +5,8 @@ end
 
 desc 'build'
 task :build do
-  sh 'jekyll build -s src'
+  sh <<EOD
+yarn run rollup -c
+jekyll build -s src
+EOD
 end
