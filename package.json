@@ -24,7 +24,9 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "scripts": {
-    "lint": "eslint frontend",
+    "lint": "npm-run-all lint:*",
+    "lint:css": "stylelint frontend",
+    "lint:script": "eslint frontend",
     "dev:css": "postcss frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
     "build:css": "postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css"
   }
