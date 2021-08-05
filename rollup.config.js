@@ -23,7 +23,7 @@ export default () => {
   }
 
   return {
-    input: 'frontend/main.js',
+    input: 'frontend/javascripts/main.js',
     output: {
       file: 'src/assets/javascripts/main.js',
       format: 'iife',

@@ -19,6 +19,8 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "scripts": {
-    "lint": "eslint frontend"
+    "lint": "eslint frontend",
+    "dev:css": "postcss frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
+    "build:css": "postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css"
   }
 }

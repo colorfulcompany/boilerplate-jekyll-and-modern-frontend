@@ -12,3 +12,4 @@ vendor
 node_modules
 yarn-error.log
 src/assets/javascripts/*
+src/assets/stylesheets/*
