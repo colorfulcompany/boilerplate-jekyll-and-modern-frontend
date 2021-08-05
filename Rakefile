@@ -6,7 +6,7 @@ end
 desc 'build'
 task :build do
   sh <<EOD
-yarn run rollup -c
-jekyll build -s src
+BUILD=production yarn run rollup -c
+JEKYLL_ENV=production jekyll build -s src
 EOD
 end
