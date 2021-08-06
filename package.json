@@ -13,7 +13,9 @@
     "eslint-plugin-jsdoc": "^36.0.6",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.1",
     "jsdoc": "^3.6.7",
+    "lint-staged": "^11.1.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
@@ -30,6 +32,7 @@
     "lint:css": "stylelint frontend",
     "lint:script": "eslint frontend",
     "dev:css": "postcss frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
-    "build:css": "postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css"
+    "build:css": "postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
+    "prepare": "husky install"
   }
 }
