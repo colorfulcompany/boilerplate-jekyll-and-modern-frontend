@@ -2,11 +2,16 @@ import { terser } from 'rollup-plugin-terser'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 // import { babel } from '@rollup/plugin-babel'
 
+/**
+ * rollup configuration function
+ *
+ * @returns {object}
+ */
 export default () => {
   // defaults
   const plugins = [
-    nodeResolve(),
-//    babel()
+    nodeResolve()
+    // babel()
   ]
   let sourcemap = true
 
@@ -16,6 +21,11 @@ export default () => {
   if (process.env.BUILD === 'production') {
     plugins.push(terser({
       format: {
+        /**
+         * @param {object} node
+         * @param {object} comment
+         * @returns {boolean}
+         */
         comments: (node, comment) => /@license/.test(comment.value)
       }
     }))
