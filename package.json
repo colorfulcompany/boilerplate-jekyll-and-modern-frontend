@@ -27,6 +27,7 @@
     "postcss-scss": "^4.0.0",
     "rollup": "^2.56.0",
     "rollup-plugin-terser": "^7.0.2",
+    "stimulus": "^2.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0"
   },
