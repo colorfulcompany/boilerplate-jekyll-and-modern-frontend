@@ -36,7 +36,7 @@
     "lint:css": "stylelint frontend",
     "lint:script": "eslint frontend",
     "dev:css": "postcss frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
-    "build:css": "postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
+    "build:css": "NODE_ENV=production postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
     "prepare": "husky install"
   }
 }

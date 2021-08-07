@@ -18,7 +18,7 @@ export default () => {
   // production 向け
   // 圧縮するが license 表記だけ残す
   // sourcemap は出力しない
-  if (process.env.BUILD === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     plugins.push(terser({
       format: {
         /**
