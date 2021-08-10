@@ -6,6 +6,7 @@ Pure HTML を出力する（CSR/SSR などの選択肢のない）静的サイ�
 利用ツール
 ----------
 
+ * [EditorConfig](https://editorconfig.org/)
  * [Jekyll • Simple, blog\-aware, static sites \| Transform your plain text into static websites and blogs](https://jekyllrb.com/)
  * [rollup\.js](https://rollupjs.org/guide/en/)
  * [Stimulus: A modest JavaScript framework for the HTML you already have\.](https://stimulus.hotwired.dev/)
