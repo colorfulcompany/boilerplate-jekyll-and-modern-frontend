@@ -1,4 +1,4 @@
 module.exports = {
-  '*.js': 'yarn run lint:script',
-  '*.?(s)css': 'yarn run lint:style'
+  '*.js': (files) => `yarn run eslint ${files.join(' ')}`,
+  '*.?(s)css': (files) => `yarn run styleline ${files.join(' ')}`
 }
