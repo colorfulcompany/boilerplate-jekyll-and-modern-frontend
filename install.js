@@ -21,7 +21,7 @@ const editJsonFile = require('edit-json-file')
  */
 const excludeGlobs = [
   '.git/*',
-  '.husky/*',
+  '.husky/_/*',
   '*.tgz',
   'bin/*',
   'node_modules/*',
@@ -34,7 +34,7 @@ const excludeGlobs = [
  */
 const excludePaths = [
   '.git',
-  '.husky',
+  '.husky/_/',
   'bin',
   'node_modules',
   'vendor',
