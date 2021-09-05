@@ -4031,6 +4031,11 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rollup-plugin-stimulus@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-stimulus/-/rollup-plugin-stimulus-0.0.1.tgz#089d91571a437405a48a3d12b2caa640c7f23d25"
+  integrity sha512-2lATFQl59YkfaI9P4N4qNa3OgC4fHzQWg6NtghnmCCqquv4HXwIk5W1wEzYq2PK+pi5KxSXSDXNBoI8jGqU37A==
+
 rollup-plugin-terser@^7.0.2:
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-7.0.2.tgz#e8fbba4869981b2dc35ae7e8a502d5c6c04d324d"

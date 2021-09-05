@@ -1,5 +1,6 @@
 import { terser } from 'rollup-plugin-terser'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import stimulus from 'rollup-plugin-stimulus'
 // import { babel } from '@rollup/plugin-babel'
 
 /**
@@ -10,6 +11,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 export default () => {
   // defaults
   const plugins = [
+    stimulus(),
     nodeResolve()
     // babel()
   ]
