@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "ja" }}">
 
   {%- include head.html -%}
-  <script src="{% acasset /assets/javascripts/main.js %}"></script>
   <link rel="stylesheet" href="{% acasset /assets/stylesheets/main.css %}">
   <body data-controller="global">
 
@@ -16,6 +15,6 @@
 
     {%- include footer.html -%}
 
+    <script defer src="{% acasset /assets/javascripts/main.js %}"></script>
   </body>
-
 </html>
