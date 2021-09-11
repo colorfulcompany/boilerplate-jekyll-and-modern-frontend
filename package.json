@@ -49,8 +49,12 @@
     "lint": "npm-run-all lint:*",
     "lint:css": "stylelint frontend",
     "lint:script": "eslint frontend",
-    "dev:css": "postcss frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
-    "build:css": "NODE_ENV=production postcss frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
+    "dev": "npm-run-all -p dev:*",
+    "dev:css": "postcss --verbose frontend/stylesheets/main.scss -w -o src/assets/stylesheets/main.css",
+    "dev:js": "rollup -w -c",
+    "build": "npm-run-all build:*",
+    "build:css": "NODE_ENV=production postcss --verbose frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
+    "build:js": "NODE_ENV=production yarn run rollup -c",
     "prepare": "husky install"
   }
 }
