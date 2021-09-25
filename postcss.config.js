@@ -5,6 +5,7 @@
  */
 module.exports = () => {
   const plugins = [
+    require('postcss-import'),
     require('csstools-postcss-sass-pre-release'),
     require('postcss-preset-env')({
       autoprefixer: true
