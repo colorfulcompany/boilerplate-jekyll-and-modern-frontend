@@ -8,5 +8,6 @@ task :build do
   sh <<EOD
 yarn run build
 JEKYLL_ENV=production jekyll build -s src
+yarn run minify-html
 EOD
 end
