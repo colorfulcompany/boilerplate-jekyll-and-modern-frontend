@@ -1,8 +1,8 @@
 import { terser } from 'rollup-plugin-terser'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
+import esbuild from 'rollup-plugin-esbuild'
 import stimulus from 'rollup-plugin-stimulus'
-// import { babel } from '@rollup/plugin-babel'
 
 /**
  * rollup configuration function
@@ -13,8 +13,8 @@ export default () => {
   // defaults
   const plugins = [
     stimulus(),
-    nodeResolve()
-    // babel()
+    nodeResolve(),
+    esbuild()
   ]
   let sourcemap = true
 
