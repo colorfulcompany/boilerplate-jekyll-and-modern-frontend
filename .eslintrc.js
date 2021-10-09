@@ -1,10 +1,10 @@
 module.exports = {
   env: {
-    es2015: true,
+    es2017: true,
     browser: true
   },
   parserOptions: {
-    ecmaVersion: 2015
+    ecmaVersion: 2017
   },
   extends: [
     'standard',
