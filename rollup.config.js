@@ -1,4 +1,3 @@
-import { terser } from 'rollup-plugin-terser'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import esbuild from 'rollup-plugin-esbuild'
@@ -14,24 +13,15 @@ export default () => {
   const plugins = [
     stimulus(),
     nodeResolve(),
-    esbuild()
+    esbuild({
+      minify: process.env.NODE_ENV === 'production'
+    })
   ]
   let sourcemap = true
 
   // production 向け
-  // 圧縮するが license 表記だけ残す
   // sourcemap は出力しない
   if (process.env.NODE_ENV === 'production') {
-    plugins.push(terser({
-      format: {
-        /**
-         * @param {object} node
-         * @param {object} comment
-         * @returns {boolean}
-         */
-        comments: (node, comment) => /@license/.test(comment.value)
-      }
-    }))
     sourcemap = false
   }
 
