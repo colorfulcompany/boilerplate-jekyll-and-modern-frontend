@@ -27,6 +27,7 @@ $ yarn
  * [EditorConfig](https://editorconfig.org/)
  * [Jekyll • Simple, blog\-aware, static sites \| Transform your plain text into static websites and blogs](https://jekyllrb.com/)
  * [rollup\.js](https://rollupjs.org/guide/en/)
+ * [esbuild \- An extremely fast JavaScript bundler](https://esbuild.github.io/)
  * [Stimulus: A modest JavaScript framework for the HTML you already have\.](https://stimulus.hotwired.dev/)
  * [PostCSS \- a tool for transforming CSS with JavaScript](https://postcss.org/)
  * [JavaScript Standard Style](https://standardjs.com/)
@@ -48,12 +49,11 @@ $ yarn
  * **少ない設定でフロントエンドに不慣れな者でも** ある程度レールに乗った制作、開発を行えるようにする
  * 小規模制作では **レイアウトの共通化** と簡単な Sass のコンパイルができればだいたいなんとかなる
  * ブラウザの互換性チェックやメンテナンスの難しいコードを書いてしまったことによる **コストは削減したい**
- * JavaScript については CDN だけでもだいたいなんとかなるが、Rollup を利用してオリジナルのライブラリなどを利用しやすくしてある。Vue などを利用したければ rollup の plugin を追加して対応することも可能
- *  場合によっては IE などレガシーな環境を考慮する必要があるかもしれない。そのような場合に備えて babel-preset-env を使える余地も用意してある
+ * JavaScript については CDN だけでもだいたいなんとかなるが、build プロセスを入れることで syntax の downgrade や asset の数の削減、minify を行っている
  * **cache busting** については Netlify など **ホスティングによっては考慮する必要がない** し、必要になったとしても bundler 側でなく Jekyll 側で https://github.com/colorfulcompany/jekyll-anticache-tag などを利用するだけでも十分機能する
  * JavaScript と CSS については ESLint および Stylelint を利用して Standard と言われている config を適用し、**記述のブレを減らす** ようにしている
  * PostCSS で **Scss** の対応と、 preset-env / autoprefixer を利用して browserslist に記述のあるブラウザへの変換を行うことで、**ブラウザ間の差異をできるだけ意識しなくて済むように**
- * production の **asset の転送量削減** 用に terser と csso で JavaScript と CSS を minify
+ * production の **asset の転送量削減** 用に esbuild と csso で JavaScript と CSS を minify
 
 選定理由
 --------
