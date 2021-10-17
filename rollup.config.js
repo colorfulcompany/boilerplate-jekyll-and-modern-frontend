@@ -3,25 +3,29 @@ import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import esbuild from 'rollup-plugin-esbuild'
 import stimulus from 'rollup-plugin-stimulus'
 
+const isProd = (process.env.NODE_ENV === 'production')
+
 /**
  * rollup configuration function
  *
  * @returns {object}
  */
 export default () => {
+  let sourcemap = true
+
   // defaults
   const plugins = [
     stimulus(),
-    nodeResolve(),
-    esbuild({
-      minify: process.env.NODE_ENV === 'production'
-    })
+    nodeResolve()
   ]
-  let sourcemap = true
 
-  // production 向け
-  // sourcemap は出力しない
-  if (process.env.NODE_ENV === 'production') {
+  if (isProd) {
+    plugins.push(
+      esbuild({
+        minify: true,
+        sourceMap: false
+      })
+    )
     sourcemap = false
   }
 
