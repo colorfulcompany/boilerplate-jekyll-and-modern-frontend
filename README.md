@@ -52,7 +52,7 @@ $ yarn
  * JavaScript については CDN だけでもだいたいなんとかなるが、build プロセスを入れることで syntax の downgrade や asset の数の削減、minify を行っている
  * **cache busting** については Netlify など **ホスティングによっては考慮する必要がない** し、必要になったとしても bundler 側でなく Jekyll 側で https://github.com/colorfulcompany/jekyll-anticache-tag などを利用するだけでも十分機能する
  * JavaScript と CSS については ESLint および Stylelint を利用して Standard と言われている config を適用し、**記述のブレを減らす** ようにしている
- * PostCSS で **Scss** の対応と、 preset-env / autoprefixer を利用して browserslist に記述のあるブラウザへの変換を行うことで、**ブラウザ間の差異をできるだけ意識しなくて済むように**
+ * PostCSS で **Scss** の対応と、 preset-env / autoprefixer を利用した変換を行うことで、**ブラウザ間の差異をできるだけ意識しなくて済むように**
  * production の **asset の転送量削減** 用に esbuild と csso で JavaScript と CSS を minify
 
 選定理由
@@ -69,6 +69,8 @@ $ yarn
   <dd><s>デファクトであり情報量は多いが、設定量も多く、またメジャーバージョン間での非互換も多いので設定コスト、メンテナンスコストが高い</s></dd>
   <dt>Rollup</dt>
   <dd>ベースが Jekyll になる場合、Webpack のようにすべての asset を JavaScript で扱う必要はない。また asset や画面内の要素が大規模でなければ dev server や HMR がなくてもそれほど困らない。最低限の機能がすぐに使える状態になる Rollup でちょうどよい。</dd>
+  <dt>esbuild</dt>
+  <dd>基本的には Rollup だけでも困らないが、production build の Tree Shaking や minify 用途および ESMA version の lowering に esbuild を利用</dd>
   <dt><s>Virtual DOM</s></d></dt>
   <dd><s>コンテンツを中心に考える場合、VirtualDOM が必要になるような高頻度の DOM の書き換えは必要ないし、event や状態の管理も必要ない。component 設計に関わるコストを常に抱える必要はない。</s></dd>
   <dt>Stimulus</dt>
