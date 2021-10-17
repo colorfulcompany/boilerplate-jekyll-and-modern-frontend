@@ -1,6 +1,7 @@
 *~
 *.bak
 .DS_Store
+.envrc
 
 README.html
 
