@@ -9,11 +9,13 @@ Pure HTML を出力する（CSR/SSR などの選択肢のない）静的サイ�
 以下のようにコマンドを叩くと、このリポジトリで利用しているツールをまとめてインストールし、実行するスクリプトを設定することができる。
 
 ```
-$ npx https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend <project>
+$ npm x https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend <project>
 $ cd <project>
 $ bundle install [--path vendor/bundle]
 $ yarn
 ```
+
+npm v6 以下の場合は npm x ( exec ) ではなく npx コマンドを利用。
 
 ### 依存ツール
 
