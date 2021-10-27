@@ -58,6 +58,7 @@
     "build:css": "NODE_ENV=production postcss --verbose frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
     "build:js": "NODE_ENV=production yarn run rollup -c",
     "minify-html": "for i in `find _site -name '*.html'`; do yarn -s run html-minifier --collapse-whitespace --conservative-collapse $i > out && mv out $i; done",
+    "view-stats": "open stats.html",
     "prepare": "husky install"
   }
 }

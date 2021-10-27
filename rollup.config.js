@@ -2,6 +2,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import esbuild from 'rollup-plugin-esbuild'
 import stimulus from 'rollup-plugin-stimulus'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 const isProd = (process.env.NODE_ENV === 'production')
 
@@ -16,7 +17,8 @@ export default () => {
   // defaults
   const plugins = [
     stimulus(),
-    nodeResolve()
+    nodeResolve(),
+    visualizer()
   ]
 
   if (isProd) {
