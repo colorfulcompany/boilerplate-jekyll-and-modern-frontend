@@ -4,6 +4,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import stimulus from 'rollup-plugin-stimulus'
 
 const isProd = (process.env.NODE_ENV === 'production')
+const esTargetVersion = 'es2017'
 
 /**
  * rollup configuration function
@@ -22,6 +23,7 @@ export default () => {
   if (isProd) {
     plugins.push(
       esbuild({
+        target: esTargetVersion,
         minify: true,
         sourceMap: false
       })
