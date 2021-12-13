@@ -1,7 +1,9 @@
 module.exports = {
   env: {
     es2017: true,
-    browser: true
+    browser: true,
+    es2020: false,
+    es2021: false
   },
   parserOptions: {
     ecmaVersion: 2017
