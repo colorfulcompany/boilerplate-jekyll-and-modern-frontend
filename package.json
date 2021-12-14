@@ -2,6 +2,15 @@
   "name": "@colorfulcompany/create-cc-jlmf",
   "description": "create Jekyll and Light-weight Modern Front-end",
   "version": "0.4.2",
+  "keywords": [
+    "jekyll",
+    "rollup",
+    "postcss",
+    "esbuild",
+    "stimulus",
+    "eslint",
+    "stylelint"
+  ],
   "engines": {
     "node": ">= 14"
   },
