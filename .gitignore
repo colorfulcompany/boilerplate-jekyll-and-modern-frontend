@@ -2,6 +2,8 @@
 *.bak
 .DS_Store
 .envrc
+!.gitignore
+!yarn.lock
 
 README.html
 
@@ -10,10 +12,11 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
 
+vendor
 node_modules
 yarn-error.log
+
 src/assets/javascripts/*
 src/assets/stylesheets/*
 
