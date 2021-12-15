@@ -1,7 +1,7 @@
 {
   "name": "@colorfulcompany/create-cc-jlmf",
   "description": "create Jekyll and Light-weight Modern Front-end",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "keywords": [
     "jekyll",
     "rollup",
@@ -19,6 +19,7 @@
     "create-cc-jlmf": "./install.js"
   },
   "dependencies": {
+    "cp-cli": "^2.0.0",
     "edit-json-file": "^1.6.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7"
@@ -66,6 +67,7 @@
     "build:css": "NODE_ENV=production postcss --verbose frontend/stylesheets/main.scss --no-map -o src/assets/stylesheets/main.css",
     "build:js": "NODE_ENV=production yarn run rollup -c",
     "minify-html": "for i in `find _site -name '*.html'`; do yarn -s run html-minifier --collapse-whitespace --conservative-collapse $i > out && mv out $i; done",
+    "prepack": "cp-cli ./.gitignore ./gitignore",
     "prepare": "husky install"
   }
 }

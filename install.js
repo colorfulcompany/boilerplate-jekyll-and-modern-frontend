@@ -92,7 +92,16 @@ function modifyPackageJson () {
   json.unset('dependencies')
   json.unset('bin')
   json.unset('main')
+  json.unset('keywords')
   json.save()
+}
+
+/**
+ * @param {string} targetDir
+ * @returns {void}
+ */
+function generateGitignore (targetDir) {
+  fse.moveSync(path.join(__dirname, 'gitignore'), path.join(targetDir, '.gitignore'))
 }
 
 /**
@@ -102,6 +111,7 @@ function main () {
   const target = parseArg(argv)
 
   modifyPackageJson()
+  generateGitignore(target)
   fse.copySync(__dirname, target, { filter: doUnlessExcluded })
 }
 

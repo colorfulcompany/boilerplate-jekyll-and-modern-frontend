@@ -3,7 +3,9 @@
 .DS_Store
 .envrc
 !.gitignore
+gitignore
 !yarn.lock
+*.tgz
 
 README.html
 
