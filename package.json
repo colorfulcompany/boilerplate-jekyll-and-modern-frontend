@@ -19,6 +19,7 @@
     "create-cc-jlmf": "./install.js"
   },
   "dependencies": {
+    "cp-cli": "^2.0.0",
     "edit-json-file": "^1.6.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.1.7"
