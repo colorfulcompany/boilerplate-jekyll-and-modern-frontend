@@ -11,6 +11,9 @@
     "eslint",
     "stylelint"
   ],
+  "homepage": "https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend",
+  "repository": "https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend",
+  "license": "bsd-2-clause",
   "engines": {
     "node": ">= 14"
   },
