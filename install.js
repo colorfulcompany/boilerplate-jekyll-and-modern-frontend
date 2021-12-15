@@ -92,6 +92,7 @@ function modifyPackageJson () {
   json.unset('dependencies')
   json.unset('bin')
   json.unset('main')
+  json.unset('keywords')
   json.save()
 }
 
