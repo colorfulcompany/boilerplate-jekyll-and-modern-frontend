@@ -9,7 +9,7 @@ Pure HTML を出力する（CSR/SSR などの選択肢のない）静的サイ�
 以下のようにコマンドを叩くと、このリポジトリで利用しているツールをまとめてインストールし、実行するスクリプトを設定することができる。
 
 ```
-$ npm x https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend <project>
+$ npm x @colorfulcompany/create-cc-jlmf <project>
 $ cd <project>
 $ bundle install [--path vendor/bundle]
 $ yarn
@@ -122,7 +122,7 @@ jQuery を使わないなら React, Vue.js などの Virtual DOM が未来なの
 
 ```
 $ yarn install
-$ npx @colorfulcompany/create-cc-jlmf <project>
+$ npm x @colorfulcompany/create-cc-jlmf <project>
 ```
 
 インストーラ本体は本リポジトリの `install.js` なので、これを更新するたびにインストーラの動作を試すディレクトリで `yarn.lock` を削除して 2.2 に戻る。
