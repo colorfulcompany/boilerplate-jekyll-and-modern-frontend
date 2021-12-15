@@ -93,6 +93,9 @@ function modifyPackageJson () {
   json.unset('bin')
   json.unset('main')
   json.unset('keywords')
+  json.unset('lisence')
+  json.unset('homepage')
+  json.unset('repository')
   json.save()
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "@colorfulcompany/create-cc-jlmf",
   "description": "create Jekyll and Light-weight Modern Front-end",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "keywords": [
     "jekyll",
     "rollup",
@@ -11,6 +11,9 @@
     "eslint",
     "stylelint"
   ],
+  "homepage": "https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend",
+  "repository": "https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend",
+  "license": "bsd-2-clause",
   "engines": {
     "node": ">= 14"
   },
