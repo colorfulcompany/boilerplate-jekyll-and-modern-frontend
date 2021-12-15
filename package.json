@@ -1,7 +1,7 @@
 {
   "name": "@colorfulcompany/create-cc-jlmf",
   "description": "create Jekyll and Light-weight Modern Front-end",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "keywords": [
     "jekyll",
     "rollup",
