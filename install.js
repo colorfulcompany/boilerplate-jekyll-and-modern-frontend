@@ -97,12 +97,21 @@ function modifyPackageJson () {
 }
 
 /**
+ * @param {string} targetDir
+ * @returns {void}
+ */
+function generateGitignore (targetDir) {
+  fse.moveSync(path.join(__dirname, 'gitignore'), path.join(targetDir, '.gitignore'))
+}
+
+/**
  * @returns {void}
  */
 function main () {
   const target = parseArg(argv)
 
   modifyPackageJson()
+  generateGitignore(target)
   fse.copySync(__dirname, target, { filter: doUnlessExcluded })
 }
 
