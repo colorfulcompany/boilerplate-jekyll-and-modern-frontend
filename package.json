@@ -33,6 +33,7 @@
     "autoprefixer": "^10.3.1",
     "browserslist": "^4.16.7",
     "csstools-postcss-sass-pre-release": "^5.0.0-dev.1",
+    "destyle.css": "^3.0.2",
     "esbuild": "^0.13.4",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
