@@ -1,3 +1,4 @@
+/* eslint-disable import/no-default-export */
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import injectProcessEnv from 'rollup-plugin-inject-process-env'
 import esbuild from 'rollup-plugin-esbuild'
@@ -12,24 +13,18 @@ const esTargetVersion = 'es2017'
  * @returns {object}
  */
 export default () => {
-  let sourcemap = true
+  const sourcemap = !isProd
 
   // defaults
   const plugins = [
     stimulus(),
-    nodeResolve()
+    nodeResolve(),
+    esbuild({
+      sourceMap: sourcemap,
+      minify: isProd,
+      target: esTargetVersion
+    })
   ]
-
-  if (isProd) {
-    plugins.push(
-      esbuild({
-        target: esTargetVersion,
-        minify: true,
-        sourceMap: false
-      })
-    )
-    sourcemap = false
-  }
 
   // place injectProcessEnv as last plugin
   plugins.push(
@@ -39,7 +34,7 @@ export default () => {
   )
 
   return {
-    input: 'frontend/javascripts/main.js',
+    input: 'frontend/javascripts/main.ts',
     output: {
       file: 'src/assets/javascripts/main.js',
       format: 'iife',

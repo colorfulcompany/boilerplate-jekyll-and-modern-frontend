@@ -30,13 +30,15 @@
   "devDependencies": {
     "@hotwired/stimulus": "^3.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
     "autoprefixer": "^10.3.1",
     "browserslist": "^4.16.7",
     "csstools-postcss-sass-pre-release": "^5.0.0-dev.1",
     "esbuild": "^0.13.4",
     "eslint": "^7.32.0",
-    "eslint-config-colorfulcompany": "https://github.com/colorfulcompany/eslint-config-colorfulcompany#v1.0.0",
+    "eslint-config-colorfulcompany": "https://github.com/colorfulcompany/eslint-config-colorfulcompany#v2.0.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-with-typescript": "^21.0.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsdoc": "^36.0.6",
     "eslint-plugin-node": "^11.1.0",
@@ -57,7 +59,8 @@
     "rollup-plugin-inject-process-env": "^1.3.1",
     "rollup-plugin-stimulus": "^0.0.1",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.7.4"
   },
   "scripts": {
     "doc": "jsdoc -r ./frontend/javascripts -c .jsdocrc.js",
