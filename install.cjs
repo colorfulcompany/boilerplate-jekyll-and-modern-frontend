@@ -6,7 +6,7 @@
  *
  * この際、不要なファイルは除外しておく
  *
- * Usage: insall.js <project>
+ * Usage: install.cjs <project>
  */
 
 const { argv } = require('process')
