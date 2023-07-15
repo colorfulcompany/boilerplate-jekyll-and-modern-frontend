@@ -1,7 +1,8 @@
 {
   "name": "@colorfulcompany/create-cc-jlmf",
   "description": "create Jekyll and Light-weight Modern Front-end",
-  "version": "0.4.7",
+  "version": "0.4.8",
+  "type": "module",
   "keywords": [
     "jekyll",
     "rollup",
@@ -60,7 +61,7 @@
     "stylelint-config-standard": "^22.0.0"
   },
   "scripts": {
-    "doc": "jsdoc -r ./frontend/javascripts -c .jsdocrc.js",
+    "doc": "jsdoc -r ./frontend/javascripts -c jsdoc.config.json",
     "lint": "npm-run-all lint:*",
     "lint:css": "stylelint frontend",
     "lint:script": "eslint frontend",
