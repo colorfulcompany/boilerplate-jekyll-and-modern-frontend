@@ -18,9 +18,10 @@
   "engines": {
     "node": ">= 14"
   },
-  "main": "./install.js",
+  "type": "module",
+  "main": "./install.cjs",
   "bin": {
-    "create-cc-jlmf": "./install.js"
+    "create-cc-jlmf": "./install.cjs"
   },
   "dependencies": {
     "cp-cli": "^2.0.0",
