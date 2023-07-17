@@ -27,5 +27,3 @@ jobs:
         run: yarn build
       - name: lint
         run: yarn lint
-
-
