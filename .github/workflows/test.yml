@@ -20,7 +20,9 @@ jobs:
         with:
           node-version: 16
       - name: setup npm
-        run: yarn install --network-concurrency 1 --network-timeout 1000
+        run: |
+          yarn install --network-concurrency 1 --network-timeout 1000
+          yarn upgrade
       - name: build
         run: yarn build
       - name: lint
