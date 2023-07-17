@@ -1,0 +1,29 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - "pull-req/**"
+      - "releases/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: setup npm
+        run: yarn
+      - name: build
+        run: yarn build
+      - name: lint
+        run: yarn lint
+
+
