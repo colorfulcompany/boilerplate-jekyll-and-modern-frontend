@@ -13,15 +13,14 @@ $ npm x @colorfulcompany/create-cc-jlmf <project>
 $ cd <project>
 $ bundle install [--path vendor/bundle]
 $ yarn
+$ yarn upgrade
 ```
-
-npm v6 以下の場合は npm x ( exec ) ではなく npx コマンドを利用。
 
 ### 依存ツール
 
  * Ruby
  * Foreman
- * Node.js 14+
+ * Node.js 16+
 
 利用ツール
 ----------
@@ -67,18 +66,12 @@ npm v6 以下の場合は npm x ( exec ) ではなく npx コマンドを利用�
 <dl>
   <dt>Jekyll</dt>
   <dd>GitHub Pages に利用されており、プロジェクトが終了してしまうリスクが小さい。開発期間も長く、テーマ、周辺のツール、サービスなどエコシステムが大きい。多くの静的サイトジェネレータの考え方のベースになっており、今となっては独自の要素がとても少ない。</dd>
-  <dt><s>Webpack</s></dt>
-  <dd><s>デファクトであり情報量は多いが、設定量も多く、またメジャーバージョン間での非互換も多いので設定コスト、メンテナンスコストが高い</s></dd>
   <dt>Rollup</dt>
   <dd>ベースが Jekyll になる場合、Webpack のようにすべての asset を JavaScript で扱う必要はない。また asset や画面内の要素が大規模でなければ dev server や HMR がなくてもそれほど困らない。最低限の機能がすぐに使える状態になる Rollup でちょうどよい。</dd>
   <dt>esbuild</dt>
   <dd>基本的には Rollup だけでも困らないが、production build の Tree Shaking や minify 用途および ESMA version の lowering に esbuild を利用</dd>
-  <dt><s>Virtual DOM</s></d></dt>
-  <dd><s>コンテンツを中心に考える場合、VirtualDOM が必要になるような高頻度の DOM の書き換えは必要ないし、event や状態の管理も必要ない。component 設計に関わるコストを常に抱える必要はない。</s></dd>
   <dt>Stimulus</dt>
   <dd>あらかじめ命名した controller とそれに紐づいた限定的な DOM 要素だけを操作対象にできるので、処理の範囲と意図を明確にでき、メンテナンスコストの上昇を防ぎつつ、Virtual DOM ほどの細粒度の component 設計にまつわるコストの上昇も防ぐことができる</dd>
-  <dt><s>jQuery</s></dt>
-  <dd><s>「このコードはどのような意図で書かれているのか？」を残す文化が醸成されておらず、書いた本人が書いた瞬間に読まないと意味が分からなくなってしまいやすい</s></dd>
   <dt>ESLint / Stylelint</dt>
   <dd>よほど記述量が少ないのでなければ導入しない理由がない</dd>
   <dt>PostCSS</dt>
@@ -87,11 +80,11 @@ npm v6 以下の場合は npm x ( exec ) ではなく npx コマンドを利用�
   <dd>PostCSS の処理の中に入れられるし <a href="https://goalsmashers.github.io/css-minification-benchmark/">CSS minification benchmark results</a> によるとネガティブな要素が少ない</dd>
 </dl>
 
-jQuery については制作においては非常に有用で、その大きなエコシステムにしたがって plugin の利用なども合わせるとコーディングコストを大幅に抑制しつつ期待する効果を得ることができる。一方、最新のバージョンを適切に利用しようとする場合、過去の plugin は更新が止まっていて動かないことも多く、JavaScript, CSS の新しいバージョンの機能を使えばそもそも jQuery 自体が不要であることも多い。
+jQuery については制作においては非常に有用だが、一方、最新のバージョンを適切に利用しようとする場合、過去の plugin は更新が止まっていて動かないことも多く、JavaScript, CSS の新しいバージョンの機能を使えばそもそも jQuery 自体が不要であることも多い。
 
 したがって新規にフロントエンドのコーディングを始めるに当たっては jQuery を使わずに書けることを目指す方が成果物をより安全にし、成果物の寿命を伸ばし、コーディングスキルの向上に寄与すると考え、選定ツールから除外した。
 
-jQuery を使わないなら React, Vue.js などの Virtual DOM が未来なのではないかと考えることもできるが、上に書いた通り高頻度で大胆な DOM 更新が必要な機会はそれほど多くないので、最初の目的である「少ない設定でフロントエンドに不慣れな者でも」に合致しないと考え、DOM 更新の影響範囲を閉じ込める用途に Stimulus を採用した。
+また上記の通り高頻度、細粒度の DOM 更新が必要な機会はそれほど多くないので、最初の目的である「少ない設定でフロントエンドに不慣れな者でも」を加味し、DOM 更新の影響範囲を閉じ込める用途に Stimulus を採用した。
 
 このボイラープレートの開発方法
 ----------------------------
@@ -136,8 +129,8 @@ ESLint も Stylelint も **Standard** を基準にしているが、新規に書
 
 一方で husky を採用しているにも関わらず formatter として pre-commit で適用することは意図していない。`--fix` は必要に応じて設定、実行すること。これは commit 前の diff と commit 後の diff が変わってしまうことを避けるためで、formatter としてこれらを適用してはいけないという意味ではない。formatter として活用するなら pre-commit など git の hook ではなくエディタや IDE に組み込んで保存時に自動的に適用する方がよいだろう。
 
-HTML に関して Prettier を採用する選択肢もあったが、**Prettier を入れると JavaScript の設定が Standard とぶつかってしまう** ので、必要以上に各ツールの設定を複雑にしないために不採用とした。プロジェクトによっては HTML にも強い制約を設けつつ Standard と同居させる設定を詰める方がよいケースもあるかもしれないので、そういう場合の Prettier の採用を妨げる意図はない。
+HTML に関して Prettier を採用する選択肢もあったが、**Prettier を入れると JavaScript の設定が Standard とぶつかってしまう** ので、設定を複雑にしないために不採用としたが、Prettier の採用を妨げる意図はない。HTML については場合によっては markuplint など、アクセシビリティへの配慮をルールとして追加してもよい。
 
-Rollup にも dev server があるので、比較的規模の大きな CSS を書く場合など、効率を求めて plugin を設定してもよい。あくまで初期設定としてはそこまで必要ないだろうという判断。
+Rollup にも dev server があるので、比較的規模の大きな CSS を書く場合など、効率を求めて plugin を設定してもよい。
 
-CSS に関しては Sass と preset-env を基本にしているが、PostCSS に寄せてあるので、**Tailwind などに切り替えてもよい** 。これも他の設定と同じように **よりメジャーである、またはより始めやすいもの** に寄せてあるだけで、レスポンシブ対応始め、高度な CSS を書くにはむしろ **2021年現在では Sass ( Scss ) はやや中途半端な存在** になりつつあるかもしれない。とは言え jQuery ほどには積極的に不採用にする強い理由があるわけではないので、Sass を基本とした。
+CSS に関しては Sass と preset-env を基本にしているが、PostCSS に寄せてあるので、**Tailwind などに切り替えてもよい** 。これも他の設定と同じように **よりメジャーである、またはより始めやすいもの** に寄せてあるだけで、レスポンシブ対応始め、高度な CSS を書くにはむしろ **2021年現在では Sass ( Scss ) はやや中途半端な存在** になりつつあるかもしれない。

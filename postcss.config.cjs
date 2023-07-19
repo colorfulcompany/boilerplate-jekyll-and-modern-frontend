@@ -13,7 +13,7 @@ module.exports = () => {
   ]
 
   if (process.env.NODE_ENV === 'production') {
-    plugins.push(require('postcss-csso'))
+    plugins.push(require('postcss-csso')({ restructure: false }))
   }
 
   return {

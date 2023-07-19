@@ -1,12 +1,15 @@
-name: package
+name: test
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - master
+      - main
+      - "pull-req/**"
+      - "releases/**"
 
 jobs:
-  package:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +23,7 @@ jobs:
         run: |
           yarn install --network-concurrency 1 --network-timeout 1000
           yarn upgrade
-      - name: setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.CC_NPM_MANAGER_TOKEN }}
-      - name: publish
-        run: npm publish --access public
+      - name: build
+        run: yarn build
+      - name: lint
+        run: yarn lint
