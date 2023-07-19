@@ -91,7 +91,7 @@ function modifyPackageJson () {
   json.unset('version')
   json.unset('dependencies')
   json.unset('bin')
-  json.unset('main')
+  json.unset('exports')
   json.unset('keywords')
   json.unset('license')
   json.unset('homepage')
