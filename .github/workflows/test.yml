@@ -18,7 +18,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: setup npm
         run: |
           yarn install --network-concurrency 1 --network-timeout 1000
