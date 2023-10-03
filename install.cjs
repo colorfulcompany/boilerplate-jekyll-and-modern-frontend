@@ -104,7 +104,7 @@ function modifyPackageJson () {
  * @returns {void}
  */
 function generateGitignore (targetDir) {
-  fse.moveSync(path.join(__dirname, 'gitignore'), path.join(targetDir, '.gitignore'))
+  fse.moveSync(path.join(__dirname, '.gitignore'), path.join(targetDir, '.gitignore'))
 }
 
 /**
