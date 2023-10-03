@@ -16,7 +16,7 @@
   "repository": "https://github.com/colorfulcompany/boilerplate-jekyll-and-modern-frontend",
   "license": "bsd-2-clause",
   "engines": {
-    "node": ">= 16"
+    "node": ">= 18"
   },
   "exports": "./install.cjs",
   "bin": {
