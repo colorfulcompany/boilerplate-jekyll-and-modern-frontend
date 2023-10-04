@@ -36,7 +36,7 @@
     "csstools-postcss-sass-pre-release": "^5.0.0-dev.1",
     "esbuild": "^0.18.13",
     "eslint": "^8.45.0",
-    "eslint-config-colorfulcompany": "https://github.com/colorfulcompany/eslint-config-colorfulcompany#v1.0.0",
+    "eslint-config-colorfulcompany": "https://github.com/colorfulcompany/eslint-config-colorfulcompany#v2.0.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsdoc": "^46.4.4",
