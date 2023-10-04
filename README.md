@@ -20,7 +20,7 @@ $ yarn upgrade
 
  * Ruby
  * Foreman
- * Node.js 16+
+ * Node.js 18+
 
 利用ツール
 ----------
